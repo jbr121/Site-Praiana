@@ -1,0 +1,119 @@
+.fretamento-hero {
+  background:
+    linear-gradient(120deg, rgba(15, 110, 122, 0.92), rgba(18, 20, 26, 0.88)),
+    url('/images/hero-bus.jpg') center / cover;
+  color: var(--white);
+  padding: clamp(2.5rem, 7vw, 4.5rem) 0;
+}
+
+.fretamento-hero .eyebrow {
+  color: var(--orange);
+}
+
+.fretamento-hero h1 {
+  font-size: clamp(2.4rem, 7vw, 4.2rem);
+  margin: 0.45rem 0 0.85rem;
+}
+
+.fretamento-hero p {
+  max-width: 38rem;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.fretamento-grid {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.fretamento-grid h2 {
+  font-size: clamp(1.7rem, 3.5vw, 2.3rem);
+  margin-bottom: 1rem;
+}
+
+.use-cases {
+  display: grid;
+  gap: 1rem;
+}
+
+.use-cases li {
+  display: grid;
+  gap: 0.3rem;
+  padding: 1.1rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.use-cases li:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.use-cases strong {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  letter-spacing: -0.02em;
+}
+
+.use-cases span {
+  color: var(--muted);
+}
+
+.fretamento-form-wrap {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+}
+
+.fretamento-form-wrap > p {
+  color: var(--muted);
+  margin-bottom: 1.25rem;
+}
+
+.fretamento-form {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.fretamento-form label {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.fretamento-form input,
+.fretamento-form textarea {
+  border: 1.5px solid var(--line);
+  border-radius: 0.7rem;
+  padding: 0.75rem 0.9rem;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.fretamento-form input:focus,
+.fretamento-form textarea:focus {
+  outline: 2px solid rgba(255, 106, 0, 0.35);
+  border-color: var(--orange);
+}
+
+.form-note {
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+@media (min-width: 860px) {
+  .fretamento-grid {
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: start;
+  }
+
+  .fretamento-form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .fretamento-form .full,
+  .fretamento-form .btn,
+  .fretamento-form .form-note {
+    grid-column: 1 / -1;
+  }
+}

@@ -1,0 +1,83 @@
+.contato-hero {
+  background: var(--ink);
+  color: var(--white);
+  padding: clamp(2.5rem, 7vw, 4.5rem) 0;
+}
+
+.contato-hero .eyebrow {
+  color: var(--orange);
+}
+
+.contato-hero h1 {
+  font-size: clamp(2.4rem, 7vw, 4.2rem);
+  margin: 0.45rem 0 0.85rem;
+}
+
+.contato-hero p {
+  max-width: 38rem;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.agency-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.agency {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  padding: 1.35rem;
+}
+
+.agency h2 {
+  font-size: clamp(1.25rem, 2.5vw, 1.55rem);
+}
+
+.agency-address {
+  margin-top: 0.55rem;
+  color: var(--muted);
+}
+
+.agency-note {
+  margin-top: 0.45rem;
+  color: var(--orange-deep);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.agency dl {
+  margin: 1.1rem 0 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.agency dt {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.agency dd {
+  margin: 0.15rem 0 0;
+  font-weight: 500;
+}
+
+.agency a:hover {
+  color: var(--orange-deep);
+}
+
+.agency-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.25rem;
+}
+
+@media (min-width: 800px) {
+  .agency-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
