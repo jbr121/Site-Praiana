@@ -26,6 +26,8 @@ export function Footer() {
           <ul>
             <li><Link to="/">Início</Link></li>
             <li><Link to="/horarios">Horários</Link></li>
+            <li><Link to="/vale-transporte">Vale-transporte</Link></li>
+            <li><Link to="/cadastro-aluno">Cadastro de aluno</Link></li>
             <li><Link to="/fretamento">Fretamento</Link></li>
             <li><Link to="/contato">Contato</Link></li>
           </ul>
@@ -44,7 +46,8 @@ export function Footer() {
                 Próximas partidas
               </a>
             </li>
-            <li><Link to="/horarios">Consulta de linhas</Link></li>
+            <li><Link to="/vale-transporte">Recarga online</Link></li>
+            <li><Link to="/cadastro-aluno">Benefício estudante</Link></li>
             <li><Link to="/fretamento">Fretamento empresarial</Link></li>
           </ul>
         </div>
@@ -67,7 +70,12 @@ export function Footer() {
 
       <div className="container footer-bottom">
         <p>© {new Date().getFullYear()} Viação Praiana. Todos os direitos reservados.</p>
-        <p>praiana.com.br</p>
+        <p className="footer-credit">
+          Desenvolvido por{' '}
+          <a href="https://github.com/jbr121" target="_blank" rel="noreferrer">
+            Joel Eduardo
+          </a>
+        </p>
       </div>
     </footer>
   )

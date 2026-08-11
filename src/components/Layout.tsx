@@ -2,6 +2,7 @@ import { Outlet, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 import { Header } from './Header'
 import { Footer } from './Footer'
+import './Footer.css'
 
 export function Layout() {
   const location = useLocation()
@@ -20,6 +21,15 @@ export function Layout() {
         <Outlet />
       </main>
       <Footer />
+      <a
+        className="site-watermark"
+        href="https://github.com/jbr121"
+        target="_blank"
+        rel="noreferrer"
+        title="Desenvolvido por Joel Eduardo"
+      >
+        Joel Eduardo · jbr121
+      </a>
     </>
   )
 }

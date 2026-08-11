@@ -84,4 +84,8 @@ export const AGENCIES: Agency[] = [
 export const EXTERNAL = {
   compraWeb: 'https://max00383.itstransdata.com/TDMaxwebcommerce/',
   proximasPartidas: 'https://mobilibus.com/proximas-partidas/2uvyb',
-} as const
+  /** URL do módulo Transdata de cadastro de aluno — atualizar quando a Transdata confirmar o link oficial. */
+  cadastroAluno: '' as string,
+}
+
+export const hasCadastroAlunoPortal = Boolean(EXTERNAL.cadastroAluno)

@@ -6,6 +6,8 @@ import './Header.css'
 const links = [
   { to: '/', label: 'Início', end: true },
   { to: '/horarios', label: 'Horários' },
+  { to: '/vale-transporte', label: 'Vale-transporte' },
+  { to: '/cadastro-aluno', label: 'Cadastro de aluno' },
   { to: '/fretamento', label: 'Fretamento' },
   { to: '/contato', label: 'Contato' },
 ]

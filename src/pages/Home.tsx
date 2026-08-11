@@ -6,16 +6,25 @@ import './Home.css'
 
 const featured = LINES.slice(0, 6)
 
+const fleetPhotos = [
+  { src: '/images/frota/bus-10.png', alt: 'Ônibus Praiana 2607 — vista frontal' },
+  { src: '/images/frota/bus-14.png', alt: 'Ônibus Praiana 2607 — lateral com marca' },
+  { src: '/images/frota/bus-8.png', alt: 'Ônibus Praiana 2602 — frente' },
+  { src: '/images/frota/bus-2.png', alt: 'Ônibus Praiana 2607 — detalhe frontal' },
+  { src: '/images/frota/bus-1.png', alt: 'Ônibus Praiana 2601 — lateral' },
+  { src: '/images/frota/bus-9.png', alt: 'Detalhe da grade e marca Viação Praiana' },
+]
+
 export function Home() {
   return (
     <div className="home">
       <section className="hero">
         <div className="hero-media" aria-hidden="true">
           <img
-            src="/images/hero-bus.jpg"
+            src="/images/hero-praiana.png"
             alt=""
-            width={2400}
-            height={1600}
+            width={1600}
+            height={1200}
           />
           <div className="hero-veil" />
         </div>
@@ -74,40 +83,67 @@ export function Home() {
         </div>
       </section>
 
+      <section className="section fleet-section">
+        <div className="container">
+          <Reveal className="section-head">
+            <span className="eyebrow">Frota</span>
+            <h2>Nossos ônibus na estrada.</h2>
+            <p>Veículos modernos, acessíveis e preparados para o dia a dia do litoral.</p>
+          </Reveal>
+
+          <div className="fleet-grid">
+            {fleetPhotos.map((photo) => (
+              <Reveal key={photo.src} className="fleet-shot" as="figure">
+                <img src={photo.src} alt={photo.alt} loading="lazy" width={800} height={600} />
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="section passe-section">
         <div className="container passe-grid">
           <Reveal>
             <span className="eyebrow">Passe Fácil</span>
             <h2>Menos fila. Mais benefício.</h2>
             <p>
-              Faça ou recarregue seu cartão Passe Fácil na agência mais próxima e viaje com praticidade
-              nas linhas da Praiana.
+              Recarregue vale-transporte pela Compra Web ou tire dúvidas sobre o cartão Passe Fácil
+              nas agências da Praiana.
             </p>
-            <Link className="btn btn-primary" to="/contato">
-              Falar com uma agência
-            </Link>
+            <div className="passe-actions">
+              <Link className="btn btn-primary" to="/vale-transporte">
+                Vale-transporte online
+              </Link>
+              <a className="btn btn-secondary on-light" href={EXTERNAL.compraWeb} target="_blank" rel="noreferrer">
+                Compra Web
+              </a>
+            </div>
           </Reveal>
-          <Reveal className="passe-visual" aria-hidden="true">
-            <div className="pass-card pass-a">
-              <span>Passe Fácil</span>
-              <strong>Cidadão</strong>
-              <em>Viação Praiana</em>
-            </div>
-            <div className="pass-card pass-b">
-              <span>Passe Fácil</span>
-              <strong>Vale-transporte</strong>
-              <em>Viação Praiana</em>
-            </div>
+          <Reveal className="passe-visual">
+            <img
+              className="pass-photo pass-photo-a"
+              src="/images/cartoes/cidadao.png"
+              alt="Cartão Passe Fácil Cidadão — Viação Praiana"
+              width={320}
+              height={500}
+            />
+            <img
+              className="pass-photo pass-photo-b"
+              src="/images/cartoes/vt.png"
+              alt="Cartão Passe Fácil Vale-transporte — Viação Praiana"
+              width={320}
+              height={500}
+            />
           </Reveal>
         </div>
       </section>
 
       <section className="section about-section">
         <div className="container about-grid">
-          <Reveal className="about-media" aria-hidden="true">
+          <Reveal className="about-media">
             <img
-              src="/images/about-bus.jpg"
-              alt=""
+              src="/images/about-praiana.png"
+              alt="Ônibus da Viação Praiana com a marca lateral"
               width={1400}
               height={900}
             />

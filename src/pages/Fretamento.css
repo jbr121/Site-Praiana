@@ -1,7 +1,7 @@
 .fretamento-hero {
   background:
     linear-gradient(120deg, rgba(15, 110, 122, 0.92), rgba(18, 20, 26, 0.88)),
-    url('/images/hero-bus.jpg') center / cover;
+    url('/images/charter-praiana.png') center 40% / cover;
   color: var(--white);
   padding: clamp(2.5rem, 7vw, 4.5rem) 0;
 }
