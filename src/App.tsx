@@ -7,9 +7,11 @@ import { Fretamento } from './pages/Fretamento'
 import { ValeTransporte } from './pages/ValeTransporte'
 import { CadastroAluno } from './pages/CadastroAluno'
 
+const basename = import.meta.env.BASE_URL.replace(/\/$/, '') || undefined
+
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <Routes>
         <Route element={<Layout />}>
           <Route index element={<Home />} />

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Reveal } from '../components/Reveal'
 import { EXTERNAL, hasCadastroAlunoPortal } from '../data/agencies'
+import { asset } from '../lib/asset'
 import './CadastroAluno.css'
 
 const docs = [
@@ -67,7 +68,7 @@ export function CadastroAluno() {
           </div>
           <img
             className="aluno-hero-card"
-            src="/images/cartoes/estudante.png"
+            src={asset('images/cartoes/estudante.png')}
             alt="Cartão Passe Fácil Estudante — Viação Praiana"
             width={280}
             height={440}

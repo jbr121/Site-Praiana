@@ -1,0 +1,6 @@
+/** Public asset path that respects Vite `base` (e.g. `/Site-Praiana/` on GitHub Pages). */
+export function asset(path: string): string {
+  const base = import.meta.env.BASE_URL
+  const clean = path.replace(/^\//, '')
+  return `${base}${clean}`
+}

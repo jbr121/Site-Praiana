@@ -2,17 +2,18 @@ import { Link } from 'react-router-dom'
 import { Reveal } from '../components/Reveal'
 import { EXTERNAL } from '../data/agencies'
 import { LINES } from '../data/lines'
+import { asset } from '../lib/asset'
 import './Home.css'
 
 const featured = LINES.slice(0, 6)
 
 const fleetPhotos = [
-  { src: '/images/frota/bus-10.png', alt: 'Ônibus Praiana 2607 — vista frontal' },
-  { src: '/images/frota/bus-14.png', alt: 'Ônibus Praiana 2607 — lateral com marca' },
-  { src: '/images/frota/bus-8.png', alt: 'Ônibus Praiana 2602 — frente' },
-  { src: '/images/frota/bus-2.png', alt: 'Ônibus Praiana 2607 — detalhe frontal' },
-  { src: '/images/frota/bus-1.png', alt: 'Ônibus Praiana 2601 — lateral' },
-  { src: '/images/frota/bus-9.png', alt: 'Detalhe da grade e marca Viação Praiana' },
+  { src: asset('images/frota/bus-10.png'), alt: 'Ônibus Praiana 2607 — vista frontal' },
+  { src: asset('images/frota/bus-14.png'), alt: 'Ônibus Praiana 2607 — lateral com marca' },
+  { src: asset('images/frota/bus-8.png'), alt: 'Ônibus Praiana 2602 — frente' },
+  { src: asset('images/frota/bus-2.png'), alt: 'Ônibus Praiana 2607 — detalhe frontal' },
+  { src: asset('images/frota/bus-1.png'), alt: 'Ônibus Praiana 2601 — lateral' },
+  { src: asset('images/frota/bus-9.png'), alt: 'Detalhe da grade e marca Viação Praiana' },
 ]
 
 export function Home() {
@@ -21,7 +22,7 @@ export function Home() {
       <section className="hero">
         <div className="hero-media" aria-hidden="true">
           <img
-            src="/images/hero-praiana.png"
+            src={asset('images/hero-praiana.png')}
             alt=""
             width={1600}
             height={1200}
@@ -122,14 +123,14 @@ export function Home() {
           <Reveal className="passe-visual">
             <img
               className="pass-photo pass-photo-a"
-              src="/images/cartoes/cidadao.png"
+              src={asset('images/cartoes/cidadao.png')}
               alt="Cartão Passe Fácil Cidadão — Viação Praiana"
               width={320}
               height={500}
             />
             <img
               className="pass-photo pass-photo-b"
-              src="/images/cartoes/vt.png"
+              src={asset('images/cartoes/vt.png')}
               alt="Cartão Passe Fácil Vale-transporte — Viação Praiana"
               width={320}
               height={500}
@@ -142,7 +143,7 @@ export function Home() {
         <div className="container about-grid">
           <Reveal className="about-media">
             <img
-              src="/images/about-praiana.png"
+              src={asset('images/about-praiana.png')}
               alt="Ônibus da Viação Praiana com a marca lateral"
               width={1400}
               height={900}

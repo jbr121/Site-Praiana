@@ -295,7 +295,7 @@
 .charter-band {
   background:
     linear-gradient(120deg, rgba(18, 20, 26, 0.88), rgba(18, 20, 26, 0.55)),
-    url('/images/charter-praiana.png') center 40% / cover;
+    var(--img-charter) center 40% / cover;
   color: var(--white);
 }
 

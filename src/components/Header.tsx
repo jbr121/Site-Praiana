@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import { EXTERNAL } from '../data/agencies'
+import { asset } from '../lib/asset'
 import './Header.css'
 
 const links = [
@@ -36,7 +37,7 @@ export function Header() {
         <Link to="/" className="brand" onClick={() => setOpen(false)} aria-label="Viação Praiana — início">
           <img
             className="brand-logo"
-            src="/brand/logomarca.png"
+            src={asset('brand/logomarca.png')}
             alt="Viação Praiana"
             width={200}
             height={44}

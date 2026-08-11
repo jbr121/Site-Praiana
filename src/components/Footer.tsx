@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { EXTERNAL } from '../data/agencies'
+import { asset } from '../lib/asset'
 import './Footer.css'
 
 export function Footer() {
@@ -9,7 +10,7 @@ export function Footer() {
         <div className="footer-brand">
           <img
             className="footer-brasao"
-            src="/brand/brasao.png"
+            src={asset('brand/brasao.png')}
             alt="Brasão Viação Praiana — Itajaí SC desde 1963"
             width={88}
             height={88}
