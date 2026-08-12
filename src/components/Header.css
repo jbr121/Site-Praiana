@@ -1,7 +1,7 @@
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 60;
   height: var(--header-h);
   display: flex;
   align-items: center;
@@ -12,6 +12,25 @@
     background 0.3s var(--ease),
     border-color 0.3s var(--ease),
     box-shadow 0.3s var(--ease);
+}
+
+.site-header.is-open {
+  background: #12141a;
+  backdrop-filter: none;
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+.site-header.is-open .brand-logo {
+  filter: brightness(0) invert(1);
+}
+
+.site-header.is-open .menu-toggle {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+.site-header.is-open .menu-toggle span {
+  background: #fff;
 }
 
 .site-header.is-scrolled {
@@ -117,20 +136,27 @@
 
 .mobile-nav {
   position: fixed;
-  inset: var(--header-h) 0 0 0;
+  inset: 0;
+  z-index: 55;
   background: #12141a;
-  padding: 1.5rem;
-  transform: translateY(-8px);
+  padding: calc(var(--header-h) + 1rem) 1.5rem 2rem;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
-  z-index: 40;
+  transform: translateY(-6px);
+  transition:
+    opacity 0.25s var(--ease),
+    transform 0.25s var(--ease),
+    visibility 0.25s var(--ease);
 }
 
 .mobile-nav.is-open {
   opacity: 1;
-  transform: none;
+  visibility: visible;
   pointer-events: auto;
+  transform: none;
 }
 
 .mobile-nav nav {

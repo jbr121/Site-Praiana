@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { NavLink, Link } from 'react-router-dom'
 import { EXTERNAL } from '../data/agencies'
 import { asset } from '../lib/asset'
@@ -31,61 +32,79 @@ export function Header() {
     }
   }, [open])
 
+  useEffect(() => {
+    if (!open) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setOpen(false)
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [open])
+
   return (
-    <header className={`site-header ${scrolled ? 'is-scrolled' : ''} ${open ? 'is-open' : ''}`}>
-      <div className="container header-inner">
-        <Link to="/" className="brand" onClick={() => setOpen(false)} aria-label="Viação Praiana — início">
-          <img
-            className="brand-logo"
-            src={asset('brand/logomarca.png')}
-            alt="Viação Praiana"
-            width={200}
-            height={44}
-          />
-        </Link>
+    <>
+      <header className={`site-header ${scrolled ? 'is-scrolled' : ''} ${open ? 'is-open' : ''}`}>
+        <div className="container header-inner">
+          <Link to="/" className="brand" onClick={() => setOpen(false)} aria-label="Viação Praiana — início">
+            <img
+              className="brand-logo"
+              src={asset('brand/logomarca.png')}
+              alt="Viação Praiana"
+              width={200}
+              height={44}
+            />
+          </Link>
 
-        <nav className="nav-desktop" aria-label="Principal">
-          {links.map((link) => (
-            <NavLink key={link.to} to={link.to} end={link.end} className={({ isActive }) => (isActive ? 'active' : undefined)}>
-              {link.label}
-            </NavLink>
-          ))}
-        </nav>
+          <nav className="nav-desktop" aria-label="Principal">
+            {links.map((link) => (
+              <NavLink key={link.to} to={link.to} end={link.end} className={({ isActive }) => (isActive ? 'active' : undefined)}>
+                {link.label}
+              </NavLink>
+            ))}
+          </nav>
 
-        <div className="header-actions">
-          <a className="btn btn-primary header-cta" href={EXTERNAL.compraWeb} target="_blank" rel="noreferrer">
-            Compra Web
-          </a>
-          <button
-            type="button"
-            className="menu-toggle"
-            aria-expanded={open}
-            aria-controls="mobile-nav"
-            aria-label={open ? 'Fechar menu' : 'Abrir menu'}
-            onClick={() => setOpen((v) => !v)}
-          >
-            <span />
-            <span />
-            <span />
-          </button>
+          <div className="header-actions">
+            <a className="btn btn-primary header-cta" href={EXTERNAL.compraWeb} target="_blank" rel="noreferrer">
+              Compra Web
+            </a>
+            <button
+              type="button"
+              className="menu-toggle"
+              aria-expanded={open}
+              aria-controls="mobile-nav"
+              aria-label={open ? 'Fechar menu' : 'Abrir menu'}
+              onClick={() => setOpen((v) => !v)}
+            >
+              <span />
+              <span />
+              <span />
+            </button>
+          </div>
         </div>
-      </div>
+      </header>
 
-      <div id="mobile-nav" className={`mobile-nav ${open ? 'is-open' : ''}`} hidden={!open}>
-        <nav aria-label="Menu mobile">
-          {links.map((link) => (
-            <NavLink key={link.to} to={link.to} end={link.end} onClick={() => setOpen(false)}>
-              {link.label}
-            </NavLink>
-          ))}
-          <a href={EXTERNAL.compraWeb} target="_blank" rel="noreferrer" onClick={() => setOpen(false)}>
-            Compra Web
-          </a>
-          <a href={EXTERNAL.proximasPartidas} target="_blank" rel="noreferrer" onClick={() => setOpen(false)}>
-            Próximas partidas
-          </a>
-        </nav>
-      </div>
-    </header>
+      {createPortal(
+        <div
+          id="mobile-nav"
+          className={`mobile-nav ${open ? 'is-open' : ''}`}
+          aria-hidden={!open}
+        >
+          <nav aria-label="Menu mobile">
+            {links.map((link) => (
+              <NavLink key={link.to} to={link.to} end={link.end} tabIndex={open ? undefined : -1} onClick={() => setOpen(false)}>
+                {link.label}
+              </NavLink>
+            ))}
+            <a href={EXTERNAL.compraWeb} target="_blank" rel="noreferrer" tabIndex={open ? undefined : -1} onClick={() => setOpen(false)}>
+              Compra Web
+            </a>
+            <a href={EXTERNAL.proximasPartidas} target="_blank" rel="noreferrer" tabIndex={open ? undefined : -1} onClick={() => setOpen(false)}>
+              Próximas partidas
+            </a>
+          </nav>
+        </div>,
+        document.body,
+      )}
+    </>
   )
 }
