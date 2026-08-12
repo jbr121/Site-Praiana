@@ -20,10 +20,6 @@
   border-bottom-color: rgba(255, 255, 255, 0.08);
 }
 
-.site-header.is-open .brand-logo {
-  filter: brightness(0) invert(1);
-}
-
 .site-header.is-open .menu-toggle {
   background: transparent;
   border-color: rgba(255, 255, 255, 0.28);
