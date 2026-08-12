@@ -26,9 +26,9 @@ export function Layout() {
         href="https://github.com/jbr121"
         target="_blank"
         rel="noreferrer"
-        title="Desenvolvido por Joel Eduardo"
+        title="Desenvolvido por José Eduardo"
       >
-        Joel Eduardo · jbr121
+        José Eduardo · jbr121
       </a>
     </>
   )

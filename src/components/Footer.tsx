@@ -74,7 +74,7 @@ export function Footer() {
         <p className="footer-credit">
           Desenvolvido por{' '}
           <a href="https://github.com/jbr121" target="_blank" rel="noreferrer">
-            Joel Eduardo
+            José Eduardo
           </a>
         </p>
       </div>
